@@ -35,7 +35,6 @@ export default function Cards({ movie }) {
     <Card>
       <div className="poster">
         <CardImage
-          className="card--image"
           src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
           alt={movie.title + " poster"}
         />

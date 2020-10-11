@@ -37,7 +37,6 @@ padding-top:3px;
 }
 `
 
-
 export default function SearchMovies({searchMovies , query, setQuery}) {
 
   return (
