@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import Play from '../Assets/play.svg'
 import Moon from "../Assets/moon.svg";
 import SearchMovies from './SearchMovies'
+import { FaPlay, FaMoon, FaRegMoon } from "react-icons/fa";
 
 
 const HeaderWrapper = styled.div`
@@ -24,12 +25,21 @@ align-items: center;
 const LogoText = styled.h2`
 margin-left: 20px;
 `
+const IconWrapper = styled.div`
+  width: 40px;
+  height: 40px;
+  box-shadow: 0px 10px 20px -10px ${(props) => props.theme.color.shadow};
+  border-radius: 50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+`;
 
 export default function Header({ searchMovies, query, setQuery, movies, setMovies, isDarkMode, setIsDarkMode }) {
   return (
     <HeaderWrapper>
       <Logo>
-        <img src={Play} alt="" /> <LogoText>MOVIE LIBRARY</LogoText>
+        <FaPlay /> <LogoText>MOVIE LIBRARY</LogoText>
       </Logo>
       <SearchMovies
         searchMovies={searchMovies}
@@ -38,11 +48,9 @@ export default function Header({ searchMovies, query, setQuery, movies, setMovie
         movies={movies}
         setMovies={setMovies}
       />
-      <img
-        src={Moon}
-        alt="mode switch"
-        onClick={() => setIsDarkMode(!isDarkMode)}
-      />
+      <IconWrapper onClick={() => setIsDarkMode(!isDarkMode)}>
+        <FaMoon />
+      </IconWrapper>
     </HeaderWrapper>
   );
 }

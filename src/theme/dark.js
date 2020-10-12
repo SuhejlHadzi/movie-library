@@ -4,6 +4,6 @@ export default {
     secondary: "#616161",
     background: "#292929",
     accentColor: "#7971EA",
-    shadow: "",
+    shadow: "none",
   },
 };

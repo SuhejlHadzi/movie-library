@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from "react";
 import styled from 'styled-components'
-
+import {FaArrowDown} from "react-icons/fa";
 import PopCards from "./PopCards";
 
 const Wrapper = styled.div`
@@ -33,7 +33,7 @@ padding-top: 30px;
 align-items:center;
 `
 const H2 = styled.h2`
-margin: 20px 0 20px 0 ;
+margin: 5px 0 10px 0 ;
 color: ${props => props.theme.color.primary};
 `
 const CardWrapper = styled.div`
@@ -41,6 +41,10 @@ const CardWrapper = styled.div`
   flex-direction: row;
   justify-content:center;
   flex-wrap: wrap;
+`;
+
+const IconStyle = styled.i`
+  color: ${(props) => props.theme.color.primary};
 `;
 
 
@@ -68,6 +72,9 @@ export default function Welcome({setLoading}) {
     <Wrapper>
       <Text>Find your favourite movies.</Text>
       <H2>Popular Movies</H2>
+      <IconStyle>
+        <FaArrowDown />
+      </IconStyle>
       <PopularWrapper>
         <CardWrapper>
           {popular.map((item) => (

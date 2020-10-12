@@ -11,7 +11,7 @@ import Loading from "./components/Loading";
 const Globalstyle = createGlobalStyle`
   body {
   background: ${(props) => props.theme.color.background};
-  transition: background 0.3s;
+  transition: background 1s;
   }
 `;
 
