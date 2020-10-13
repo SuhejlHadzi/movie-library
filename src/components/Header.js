@@ -1,7 +1,5 @@
 import React from "react";
 import styled from 'styled-components'
-import Play from '../Assets/play.svg'
-import Moon from "../Assets/moon.svg";
 import SearchMovies from './SearchMovies'
 import { FaPlay, FaMoon, FaRegMoon } from "react-icons/fa";
 import {Link, useHistory} from 'react-router-dom'

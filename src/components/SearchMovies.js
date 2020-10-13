@@ -1,7 +1,7 @@
 import React from "react";
-import SearchIcon from '../Assets/search.svg'
 import styled from 'styled-components'
 import{useHistory} from 'react-router-dom'
+import {FaSistrix} from 'react-icons/fa'
 
 const Form = styled.form`
   display: flex;
@@ -33,10 +33,12 @@ const Input = styled.input`
 `;
 
 const Button = styled.button`
-background: #efefef;
+background: ${props => props.theme.color.primary};
+color: white;
 border: none;
 border-radius: 50% ;
 width: 42px;
+font-size: 18px;
 height: 42px;
 padding-top:3px;
 &:hover {
@@ -59,7 +61,7 @@ export default function SearchMovies({searchMovies , query, setQuery}) {
         />
         
           <Button type="submit" disabled={!query} onClick={() => history.push('/search')}>
-            <img src={SearchIcon} alt="seach icon" />
+            <FaSistrix />
           </Button>
       
       </Form>

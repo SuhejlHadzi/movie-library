@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import "./App.css";
-import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
+import React, { useState } from "react";
+import Globalstyle from './theme/Globalstyle'
+import { ThemeProvider } from "styled-components";
 import light from "./theme/light";
 import dark from "./theme/dark";
 import Header from "./components/Header";
@@ -14,12 +14,6 @@ import {
   Link
 } from "react-router-dom";
 
-const Globalstyle = createGlobalStyle`
-  body {
-  background: ${(props) => props.theme.color.background};
-  transition: background 0.5s;
-  }
-`;
 
 function App() {
   const stored = localStorage.getItem("isDarkMode");
