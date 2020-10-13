@@ -1,17 +1,23 @@
 import React, { useState, useEffect } from "react";
 import "./App.css";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import lightTheme from "./theme/light";
-import darkTheme from "./theme/dark";
+import light from "./theme/light";
+import dark from "./theme/dark";
 import Header from "./components/Header";
 import MovieResult from "./components/MovieResult";
 import Welcome from "./components/Welcome";
 import Loading from "./components/Loading";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 
 const Globalstyle = createGlobalStyle`
   body {
   background: ${(props) => props.theme.color.background};
-  transition: background 1s;
+  transition: background 0.5s;
   }
 `;
 
@@ -39,9 +45,9 @@ function App() {
   };
 
   return (
-    <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
+    <ThemeProvider theme={isDarkMode ? dark : light}>
       <Globalstyle />
-
+<Router>
       <div className="container">
         {loading ? <Loading /> : ""}
         <Header
@@ -53,9 +59,10 @@ function App() {
           isDarkMode={isDarkMode}
           setIsDarkMode={setIsDarkMode}
         />
-        {movies.length === 0 ? "" : <MovieResult movies={movies} />}
-        {movies.length === 0 ? <Welcome setLoading={setLoading} /> : ""}
+        <Route path="/search"><MovieResult movies={movies}/></Route>
+         <Route path="/" exact> <Welcome setLoading={setLoading} /> </Route> 
       </div>
+      </Router>
     </ThemeProvider>
   );
 }

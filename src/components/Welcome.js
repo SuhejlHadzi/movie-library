@@ -11,17 +11,32 @@ const Wrapper = styled.div`
   flex-direction: column;
   justify-content: start;
   align-items: center;
-  background: ${(props) => props.theme.color.background};
+    @media (max-width: 768px) {
+    padding-top: 150px;
+  }
 `;
 const ImageWrapper = styled.img`
   width: 130px;
   margin-top: 30px;
 `;
 
-const Text  = styled.h1`
+const Title  = styled.h1`
 font-size: 3.5em;
 color: ${props => props.theme.color.primary};
+@media (max-width: 768px) {
+    align-self:start;
+    padding-left: 40px;
+  }
 `;
+
+const H2 = styled.h2`
+margin: 5px 0 10px 0 ;
+color: ${props => props.theme.color.secondary};
+ @media (max-width: 768px) {
+    align-self:start;
+    padding-left: 40px;
+  }
+`
 
 const PopularWrapper = styled.div`
 width: 100%;
@@ -32,10 +47,7 @@ justify-content:start;
 padding-top: 30px;
 align-items:center;
 `
-const H2 = styled.h2`
-margin: 5px 0 10px 0 ;
-color: ${props => props.theme.color.primary};
-`
+
 const CardWrapper = styled.div`
   display: flex;
   flex-direction: row;
@@ -44,7 +56,12 @@ const CardWrapper = styled.div`
 `;
 
 const IconStyle = styled.i`
-  color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color.secondary};
+  @media (max-width: 768px) {
+    align-self:start;
+    padding-left: 45px;
+    margin-top: 10px;
+  }
 `;
 
 
@@ -70,7 +87,7 @@ export default function Welcome({setLoading}) {
 
   return (
     <Wrapper>
-      <Text>Find your favourite movies.</Text>
+      <Title>Find your favourite movies.</Title>
       <H2>Popular Movies</H2>
       <IconStyle>
         <FaArrowDown />

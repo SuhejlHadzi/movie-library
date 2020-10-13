@@ -1,19 +1,23 @@
 import React from "react";
-import styled from "styled-components"
+import styled from "styled-components";
 
 const Card = styled.div`
-width: 200px;
-height: 450px;
-margin: 20px;
-&:hover {
-  cursor: pointer;
-}
-`
+  width: 200px;
+  height: 450px;
+  margin: 20px;
+  &:hover {
+    cursor: pointer;
+  }
+   @media (max-width: 768px) {
+    height: 400px;
+
+  }
+`;
 const CardImage = styled.img`
   width: 180px;
   height: 280px;
   border-radius: 20px;
-  box-shadow: 0px 10px 20px -10px ${props => props.theme.color.shadow};
+  box-shadow: 0px 10px 20px -10px ${(props) => props.theme.color.shadow};
   transition: transform 0.5s;
   &:hover {
     transform: translateY(-10px);
@@ -21,7 +25,7 @@ const CardImage = styled.img`
 `;
 
 const Title = styled.h4`
-  color: ${props => props.theme.color.primary};
+  color: ${(props) => props.theme.color.primary};
   margin-top: 10px;
 `;
 
@@ -31,7 +35,6 @@ const Text = styled.p`
 
 export default function Cards({ movie }) {
   return (
-    
     <Card>
       <div className="poster">
         <CardImage

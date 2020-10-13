@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
 
-
 const PopCard = styled.img`
   width: 280px;
   height: 390px;
@@ -9,6 +8,11 @@ const PopCard = styled.img`
   margin: 10px;
   background: white;
   box-shadow: 0px 10px 20px -10px ${(props) => props.theme.color.shadow};
+    transition: transform 0.5s;
+  &:hover {
+    transform: translateY(-10px);
+    cursor: pointer;
+  }
 `;
 
 const Title = styled.h4`
@@ -17,7 +21,7 @@ const Title = styled.h4`
   text-align: center;
 `;
 
-export default function PopCards({item}) {
+export default function PopCards({ item }) {
   return (
     <div>
       <PopCard

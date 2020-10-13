@@ -1,18 +1,22 @@
 import React from "react";
 import SearchIcon from '../Assets/search.svg'
 import styled from 'styled-components'
+import{useHistory} from 'react-router-dom'
 
 const Form = styled.form`
   display: flex;
   align-items: center;
-  background: ${(props) => props.theme.color.background};
   padding: 0 0 0 20px;
   border-radius: 100px;
   border: 2px solid ${(props) => props.theme.color.primary};
+   @media (max-width: 768px) {
+   margin-top:10px;
+   width: 105%;
+  }
 `;
 
 const Input = styled.input`
-  width: 500px;
+  width: 501px;
   height: 40px;
   border: none;
   background: transparent;
@@ -22,6 +26,9 @@ const Input = styled.input`
   }
   &:focus::placeholder {
     color: transparent;
+  }
+     @media (max-width: 768px) {
+   width: 81%;
   }
 `;
 
@@ -38,7 +45,7 @@ padding-top:3px;
 `
 
 export default function SearchMovies({searchMovies , query, setQuery}) {
-
+ const history = useHistory();
   return (
     <div>
       <Form onSubmit={searchMovies}>
@@ -51,7 +58,7 @@ export default function SearchMovies({searchMovies , query, setQuery}) {
           onChange={(e) => setQuery(e.target.value)}
         />
         
-          <Button type="submit" disabled={!query}>
+          <Button type="submit" disabled={!query} onClick={() => history.push('/search')}>
             <img src={SearchIcon} alt="seach icon" />
           </Button>
       

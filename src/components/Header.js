@@ -4,6 +4,8 @@ import Play from '../Assets/play.svg'
 import Moon from "../Assets/moon.svg";
 import SearchMovies from './SearchMovies'
 import { FaPlay, FaMoon, FaRegMoon } from "react-icons/fa";
+import {Link, useHistory} from 'react-router-dom'
+
 
 
 const HeaderWrapper = styled.div`
@@ -16,10 +18,18 @@ const HeaderWrapper = styled.div`
   align-items: center;
   padding: 0 40px;
   color: ${(props) => props.theme.color.primary};
+
 `;
 const Logo = styled.div`
 display: flex; 
 align-items: center;
+&:hover{ 
+  cursor: pointer;
+}
+ @media (max-width: 768px) {
+    padding-top: 20px;
+    margin-bottom: 20px;
+  }
 `
 
 const LogoText = styled.h2`
@@ -33,12 +43,19 @@ const IconWrapper = styled.div`
   display:flex;
   align-items:center;
   justify-content:center;
+    &:hover{ 
+    cursor: pointer;  
+  }
+   @media (max-width: 768px) {
+    margin-top: 5px;
+  }
 `;
 
 export default function Header({ searchMovies, query, setQuery, movies, setMovies, isDarkMode, setIsDarkMode }) {
+   const history = useHistory();
   return (
     <HeaderWrapper>
-      <Logo>
+      <Logo onClick={() => history.push('/')}>
         <FaPlay /> <LogoText>MOVIE LIBRARY</LogoText>
       </Logo>
       <SearchMovies
