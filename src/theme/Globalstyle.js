@@ -5,6 +5,7 @@ const Globalstyle = createGlobalStyle`
   background: ${(props) => props.theme.color.background};
   transition: background 0.5s;
   }
+
   *{
     margin: 0;
     padding: 0;

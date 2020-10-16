@@ -5,19 +5,42 @@ import { FaPlay, FaMoon, FaRegMoon } from "react-icons/fa";
 import {Link, useHistory} from 'react-router-dom'
 
 
-
 const HeaderWrapper = styled.div`
-  height: 100px;
+  height: 170px;
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   position: absolute;
-  justify-content: space-between;
+  justify-content: start;
   align-items: center;
-  padding: 0 40px;
   color: ${(props) => props.theme.color.primary};
-
+   @media (max-width: 768px) {
+   flex-direction: row;
+   flex-wrap: wrap;
+  }
 `;
+
+  const UpperWrapper = styled.div`
+  display: flex; 
+  justify-content:space-between;
+  align-items: center;
+  padding: 10px 40px;
+  width: 100%;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  background: ${(props) => props.theme.color.primary};
+    color: #efefef;
+    @media (max-width: 768px) {
+   padding: 10px 30px;
+  }
+  `
+    const LowerWrapper = styled.div`
+    display: flex; 
+    justify-content: center; 
+   height: 120px;
+   width: 100%;
+  `
+
 const Logo = styled.div`
 display: flex; 
 align-items: center;
@@ -29,33 +52,36 @@ align-items: center;
     margin-bottom: 20px;
   }
 `
-
 const LogoText = styled.h2`
 margin-left: 20px;
 `
-const IconWrapper = styled.div`
-  width: 40px;
-  height: 40px;
-  box-shadow: 0px 10px 20px -10px ${(props) => props.theme.color.shadow};
-  border-radius: 50%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-    &:hover{ 
-    cursor: pointer;  
-  }
-   @media (max-width: 768px) {
-    margin-top: 5px;
-  }
-`;
+
+const IconWrapper = styled.span`
+border: 2px solid #fff; 
+border-radius: 50%;
+width: 40px; 
+height: 40px;
+display:flex;
+justify-content:center;
+align-items:center;
+&:hover {
+  cursor: pointer;
+}
+`
 
 export default function Header({ searchMovies, query, setQuery, movies, setMovies, isDarkMode, setIsDarkMode }) {
    const history = useHistory();
   return (
     <HeaderWrapper>
+      <UpperWrapper>
       <Logo onClick={() => history.push('/')}>
         <FaPlay /> <LogoText>MOVIE LIBRARY</LogoText>
       </Logo>
+         <IconWrapper onClick={() => setIsDarkMode(!isDarkMode)}>
+        <FaMoon />
+    </IconWrapper>
+      </UpperWrapper>
+      <LowerWrapper>
       <SearchMovies
         searchMovies={searchMovies}
         query={query}
@@ -63,9 +89,8 @@ export default function Header({ searchMovies, query, setQuery, movies, setMovie
         movies={movies}
         setMovies={setMovies}
       />
-      <IconWrapper onClick={() => setIsDarkMode(!isDarkMode)}>
-        <FaMoon />
-      </IconWrapper>
+      </LowerWrapper>
+  
     </HeaderWrapper>
   );
 }

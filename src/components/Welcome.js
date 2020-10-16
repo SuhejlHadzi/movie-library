@@ -3,16 +3,17 @@ import styled from 'styled-components'
 import {FaArrowDown} from "react-icons/fa";
 import PopCards from "./PopCards";
 
+
 const Wrapper = styled.div`
   width: 100%;
   height: 100vh;
   display: flex;
-  padding-top: 10%;
+  padding-top: 210px;
   flex-direction: column;
   justify-content: start;
   align-items: center;
     @media (max-width: 768px) {
-    padding-top: 150px;
+    padding-top: 250px;
   }
 `;
 const ImageWrapper = styled.img`
@@ -25,7 +26,8 @@ font-size: 3.5em;
 color: ${props => props.theme.color.primary};
 @media (max-width: 768px) {
     align-self:start;
-    padding-left: 40px;
+    padding-left: 30px;
+    line-height: 1.2em;
   }
 `;
 
@@ -34,7 +36,7 @@ margin: 5px 0 10px 0 ;
 color: ${props => props.theme.color.secondary};
  @media (max-width: 768px) {
     align-self:start;
-    padding-left: 40px;
+    padding-left: 30px;
   }
 `
 
@@ -59,7 +61,7 @@ const IconStyle = styled.i`
   color: ${(props) => props.theme.color.secondary};
   @media (max-width: 768px) {
     align-self:start;
-    padding-left: 45px;
+    padding-left: 30px;
     margin-top: 10px;
   }
 `;
