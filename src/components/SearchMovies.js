@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
-import{useHistory, Link} from 'react-router-dom'
+import{useHistory, NavLink} from 'react-router-dom'
 import {FaSistrix} from 'react-icons/fa'
 import Chips from './Chips'
 
@@ -66,28 +66,51 @@ padding-top:3px;
   cursor: pointer;}
 }
 `
+const Link = styled(NavLink)`
+    background: none;
+border: 1px solid ${props => props.theme.color.primary};
+border-radius: 50px; 
+padding: 5px 15px; 
+color: ${props => props.theme.color.primary};
+margin: 0 5px;
+text-decoration: none;
+font-size: 14px;
+&:hover {
+    cursor: pointer; 
+}
+   @media (max-width: 768px) {
+   padding: 5px 9px;
+   margin: 0 2px;
+  }
+&.active {
+  background: ${props => props.theme.color.primary};
+  border-radius: 50px; 
+  color: #fff;
+
+}
+`
 
 export default function SearchMovies({searchMovies , query, setQuery}) {
  const history = useHistory();
   return (
     <Wrapper>
-       <ChipsWrapper>
+      <ChipsWrapper>
 
-                <Link to="/top-rated">
-<Chips name="Top Rated" />
-</Link>
-  <Link to="/upcoming">
-<Chips name="Upcomming" />
-</Link>
-         <Link to="/playing">
-      <Chips name="Playing" />
-      </Link>
-
-<Link to="/">
-<Chips name="Popular" />
-</Link>
+         <Link to="/" exact>
+          <Chips name="Popular" />
+        </Link>
+        <Link to="/top-rated">
+          <Chips name="Top Rated" />
+        </Link>
+        <Link to="/upcoming">
+          <Chips name="Upcomming" />
+        </Link>
+        <Link to="/playing">
+          <Chips name="Playing" />
+        </Link>
+  
       </ChipsWrapper>
-      
+
       <Form onSubmit={searchMovies}>
         <Input
           className="input"
@@ -97,11 +120,14 @@ export default function SearchMovies({searchMovies , query, setQuery}) {
           value={query}
           onChange={(e) => setQuery(e.target.value)}
         />
-        
-          <Button type="submit" disabled={!query} onClick={() => history.push('/search')}>
-            <FaSistrix />
-          </Button>
-      
+
+        <Button
+          type="submit"
+          disabled={!query}
+          onClick={() => history.push("/search")}
+        >
+          <FaSistrix />
+        </Button>
       </Form>
     </Wrapper>
   );
