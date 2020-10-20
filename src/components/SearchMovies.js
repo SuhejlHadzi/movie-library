@@ -1,6 +1,6 @@
 import React from "react";
 import styled from 'styled-components'
-import{useHistory} from 'react-router-dom'
+import{useHistory, Link} from 'react-router-dom'
 import {FaSistrix} from 'react-icons/fa'
 import Chips from './Chips'
 
@@ -9,7 +9,7 @@ display: flex;
 flex-direction: column;
 justify-content: center; 
 align-items: center; 
-width: 700px;
+width: 790px;
 `
 
 const ChipsWrapper = styled.div`
@@ -19,26 +19,25 @@ padding: 5px 15px;
    @media (max-width: 768px) {
    flex-direction: row;
    padding: 0px;
-
   }
 `
-
 const Form = styled.form`
 width: 100%;
-margin-top: 30px;
+margin-top: 25px;
+height: 50px;
   display: flex;
   align-items: center;
   padding: 0 0 0 20px;
   border-radius: 100px;
   border: none;
-  box-shadow: 0px 5px 18px -10px ${(props) => props.theme.color.shadow};
+  box-shadow: 0px 5px 20px -15px ${(props) => props.theme.color.shadow};
    @media (max-width: 768px) {
    width: 90%;
   }
 `;
 
 const Input = styled.input`
-  width: 95%;
+  width: 94%;
   height: 40px;
   border: none;
   background: transparent;
@@ -50,7 +49,7 @@ const Input = styled.input`
     color: transparent;
   }
      @media (max-width: 768px) {
-   width: 90%;
+   width: 85.5%;
   }
 `;
 
@@ -73,10 +72,20 @@ export default function SearchMovies({searchMovies , query, setQuery}) {
   return (
     <Wrapper>
        <ChipsWrapper>
-      <Chips name="Latest" />
+
+                <Link to="/top-rated">
 <Chips name="Top Rated" />
+</Link>
+  <Link to="/upcoming">
 <Chips name="Upcomming" />
+</Link>
+         <Link to="/playing">
+      <Chips name="Playing" />
+      </Link>
+
+<Link to="/">
 <Chips name="Popular" />
+</Link>
       </ChipsWrapper>
       
       <Form onSubmit={searchMovies}>

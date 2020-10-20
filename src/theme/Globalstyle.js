@@ -25,6 +25,11 @@ input:-webkit-autofill:active {
    -webkit-text-fill-color:#ccc ;
 }
 
+::selection { 
+    background:  ${(props) => props.theme.color.primary};
+    color: #fff;
+    }
+
 ::-webkit-scrollbar {
     background: #efefef;
     width: 10px;

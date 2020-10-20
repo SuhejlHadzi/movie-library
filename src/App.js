@@ -13,6 +13,9 @@ import {
   Route,
   Link
 } from "react-router-dom";
+import TopRated from './components/TopRated'
+import Upcoming from './components/Upcoming'
+import Playing from './components/Playing'
 
 
 function App() {
@@ -55,6 +58,10 @@ function App() {
         />
         <Route path="/search"><MovieResult movies={movies}/></Route>
          <Route path="/" exact> <Welcome setLoading={setLoading} /> </Route> 
+          <Route path="/top-rated" exact> <TopRated setLoading={setLoading} /> </Route> 
+          <Route path="/upcoming" exact> <Upcoming setLoading={setLoading} /> </Route> 
+          <Route path="/playing" exact> <Playing setLoading={setLoading} /> </Route> 
+
       </div>
       </Router>
     </ThemeProvider>

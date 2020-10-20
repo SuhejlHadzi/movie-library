@@ -3,8 +3,8 @@ import styled from "styled-components";
 
 const Card = styled.div`
   width: 200px;
-  height: 450px;
-  margin: 20px;
+  height: 400px;
+  margin: 10px 20px;
   &:hover {
     cursor: pointer;
   }

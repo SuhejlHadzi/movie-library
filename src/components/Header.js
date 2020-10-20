@@ -29,7 +29,7 @@ const HeaderWrapper = styled.div`
   margin-bottom: 20px;
   flex-wrap: wrap;
   background: ${(props) => props.theme.color.primary};
-    color: #efefef;
+    color: #fff;
     @media (max-width: 768px) {
    padding: 10px 30px;
   }

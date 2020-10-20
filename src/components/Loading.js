@@ -11,7 +11,7 @@ const Outer = styled.div`
   overflow: hidden;
   width: 100%;
   height: 4px;
-  background-color: #ccc;
+  background-color: #fff;
 `;
 
 const Animation1 = keyframes`
