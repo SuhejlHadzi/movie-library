@@ -24,6 +24,7 @@ export default function MovieResult({ movies }) {
           .filter((movie) => movie.poster_path)
           .map((movie) => <Cards movie={movie} key={movie.id} />)
       }
+     
     </Wrapper>
   );
 }

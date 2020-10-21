@@ -9,9 +9,7 @@ import Welcome from "./components/Welcome";
 import Loading from "./components/Loading";
 import {
   BrowserRouter as Router,
-  Switch,
-  Route,
-  Link
+  Route
 } from "react-router-dom";
 import TopRated from './components/TopRated'
 import Upcoming from './components/Upcoming'
@@ -45,7 +43,7 @@ function App() {
     <ThemeProvider theme={isDarkMode ? dark : light}>
       <Globalstyle />
 <Router>
-      <div className="container">
+      <div>
         {loading ? <Loading /> : ""}
         <Header
           searchMovies={searchMovies}
@@ -61,7 +59,7 @@ function App() {
           <Route path="/top-rated" exact> <TopRated setLoading={setLoading} /> </Route> 
           <Route path="/upcoming" exact> <Upcoming setLoading={setLoading} /> </Route> 
           <Route path="/playing" exact> <Playing setLoading={setLoading} /> </Route> 
-
+      
       </div>
       </Router>
     </ThemeProvider>

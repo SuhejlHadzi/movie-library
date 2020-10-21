@@ -1,16 +1,16 @@
 import React from "react";
 import styled from "styled-components";
+import {FaStar} from 'react-icons/fa'
 
 const Card = styled.div`
   width: 200px;
   height: 400px;
-  margin: 10px 20px;
+  margin: 15px 20px;
   &:hover {
     cursor: pointer;
   }
-   @media (max-width: 768px) {
+  @media (max-width: 768px) {
     height: 400px;
-
   }
 `;
 const CardImage = styled.img`
@@ -27,11 +27,17 @@ const CardImage = styled.img`
 const Title = styled.h4`
   color: ${(props) => props.theme.color.primary};
   margin-top: 10px;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   display: -webkit-box;
+   -webkit-line-clamp: 2; /* number of lines to show */
+   -webkit-box-orient: vertical;
 `;
 
 const Text = styled.p`
-  color: ${(props) => props.theme.color.primary};
+  color: ${(props) => props.theme.color.secondary};
 `;
+
 
 export default function Cards({ movie }) {
   return (
@@ -45,11 +51,11 @@ export default function Cards({ movie }) {
       <div className="card--content">
         <Title className="card--title">{movie.title}</Title>
         <Text>
-          <small>RELEASE DATE: {movie.release_date}</small>
+          <small>Relase date: {movie.release_date}</small>
         </Text>
 
         <Text>
-          <small className="rating">RATING: {movie.vote_average}</small>
+          <small className="rating">Rating:  {movie.vote_average} <FaStar /> </small>
         </Text>
       </div>
     </Card>

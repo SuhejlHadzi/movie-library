@@ -1,9 +1,10 @@
 export default {
   color: {
     primary: "#e8505b ",
-    secondary: "#616161",
-    background: "#292929",
-    accentColor: "#7971EA",
-    shadow: "",
+    secondary: "#DDDDDD",
+    background: "#121212",
+    card: "#1E1E1E",
+    chips: "#1E1E1E",
+    shadow: "none",
   },
 };

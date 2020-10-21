@@ -31,15 +31,15 @@ input:-webkit-autofill:active {
     }
 
 ::-webkit-scrollbar {
-    background: #efefef;
+    background: ${(props) => props.theme.color.background};
     width: 10px;
 } 
 ::-webkit-scrollbar-button {
-    background:#efefef;
+    background: ${(props) => props.theme.color.secondary};
 }
 ::-webkit-scrollbar-thumb {
-    background: #616161;
-    border-radius: 30px;
+    background: ${(props) => props.theme.color.secondary};
+  
 }
 `;
 

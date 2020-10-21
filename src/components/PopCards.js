@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import {FaStar} from 'react-icons/fa'
 
 const PopCard = styled.img`
   width: 280px;
@@ -17,9 +18,15 @@ const PopCard = styled.img`
 
 const Title = styled.h4`
   color: ${(props) => props.theme.color.primary};
-  margin: 10px 0 20px 0;
+  margin: 5px 0 5px 0;
   text-align: center;
 `;
+
+const RatingText = styled.p`
+  color: ${(props) => props.theme.color.secondary};
+  text-align: center;
+   margin: 0px 0 20px 0;
+`
 
 export default function PopCards({ item }) {
   return (
@@ -29,6 +36,7 @@ export default function PopCards({ item }) {
         alt={item.title + " poster"}
       />
       <Title className="card--title">{item.title}</Title>
+      <RatingText>  {item.vote_average} <FaStar /> </RatingText>
     </div>
   );
 }

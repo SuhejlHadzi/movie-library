@@ -3,7 +3,9 @@ export default {
     primary: "#e8505b",
     secondary: "#616161",
     background: "#fff",
-    accentColor: "#7971EA",
+    card: "#fff",
+    searchbarShadow: "#888888",
+    chips: "#FFF0F1",
     shadow: "#888888",
   },
 };
