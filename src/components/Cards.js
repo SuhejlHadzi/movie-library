@@ -6,6 +6,9 @@ const Card = styled.div`
   width: 200px;
   height: 400px;
   margin: 15px 20px;
+  display:flex;
+  flex-direction: column;
+  align-items:center;
   &:hover {
     cursor: pointer;
   }

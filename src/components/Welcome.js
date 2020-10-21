@@ -72,8 +72,7 @@ export default function Welcome({ setLoading }) {
   const [popular, setPopular] = useState([]);
   useEffect(() => {
     const fetchData = async () => {
-      const url =
-        "https://api.themoviedb.org/3/movie/popular/?api_key=87cea0f090383f2c0b68efa858648b0b&language=en-US&page=1/";
+      const url = 'https://api.themoviedb.org/3/movie/popular?api_key=87cea0f090383f2c0b68efa858648b0b&language=en-US&page=1';
       try {
         setLoading(true);
         const res = await fetch(url);
