@@ -17,6 +17,9 @@ const Wrapper = styled.div`
 `;
 
 export default function MovieResult({ movies }) {
+
+    // Movie results section
+
   return (
     <Wrapper>
       {

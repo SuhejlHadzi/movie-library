@@ -18,6 +18,7 @@ const Wrapper = styled.div`
 
 export default function Playing({ setLoading }) {
 
+  //Now Playing movies
 
      const [now, setNow] = useState([]);
      useEffect(() => {

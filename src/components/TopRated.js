@@ -17,6 +17,9 @@ const Wrapper = styled.div`
 `;
 
 export default function TopRated({ setLoading }) {
+
+  // Top Rated
+   
   const [top, setTop] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

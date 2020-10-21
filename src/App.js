@@ -17,6 +17,9 @@ import Playing from './components/Playing'
 
 
 function App() {
+
+    //App state
+
   const stored = localStorage.getItem("isDarkMode");
   const [isDarkMode, setIsDarkMode] = useState(
     stored === "true" ? true : false
@@ -24,6 +27,8 @@ function App() {
   const [loading, setLoading] = useState(false);
   const [query, setQuery] = useState("");
   const [movies, setMovies] = useState([]);
+
+    //search button function to fetch results
 
   const searchMovies = async (e) => {
     e.preventDefault();
@@ -42,25 +47,39 @@ function App() {
   return (
     <ThemeProvider theme={isDarkMode ? dark : light}>
       <Globalstyle />
-<Router>
-      <div>
-        {loading ? <Loading /> : ""}
-        <Header
-          searchMovies={searchMovies}
-          query={query}
-          setQuery={setQuery}
-          movies={movies}
-          setMovies={setMovies}
-          isDarkMode={isDarkMode}
-          setIsDarkMode={setIsDarkMode}
-        />
-        <Route path="/search"><MovieResult movies={movies}/></Route>
-         <Route path="/" exact> <Welcome setLoading={setLoading} /> </Route> 
-          <Route path="/top-rated" exact> <TopRated setLoading={setLoading} /> </Route> 
-          <Route path="/upcoming" exact> <Upcoming setLoading={setLoading} /> </Route> 
-          <Route path="/playing" exact> <Playing setLoading={setLoading} /> </Route> 
-      
-      </div>
+      <Router>
+        <div>
+          {loading ? <Loading /> : ""}
+          <Header
+            searchMovies={searchMovies}
+            query={query}
+            setQuery={setQuery}
+            movies={movies}
+            setMovies={setMovies}
+            isDarkMode={isDarkMode}
+            setIsDarkMode={setIsDarkMode}
+          />
+
+          <Route path="/search">
+            <MovieResult movies={movies} />
+          </Route>
+          <Route path="/" exact>
+            
+            <Welcome setLoading={setLoading} />
+          </Route>
+          <Route path="/top-rated" exact>
+            
+            <TopRated setLoading={setLoading} />
+          </Route>
+          <Route path="/upcoming" exact>
+            
+            <Upcoming setLoading={setLoading} />
+          </Route>
+          <Route path="/playing" exact>
+            
+            <Playing setLoading={setLoading} />
+          </Route>
+        </div>
       </Router>
     </ThemeProvider>
   );

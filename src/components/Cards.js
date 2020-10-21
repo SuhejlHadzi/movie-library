@@ -40,6 +40,9 @@ const Text = styled.p`
 
 
 export default function Cards({ movie }) {
+
+  // Movie cards used for latest/top rated etc..
+  
   return (
     <Card>
       <div className="poster">

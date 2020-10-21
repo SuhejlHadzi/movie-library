@@ -66,6 +66,9 @@ const IconStyle = styled.i`
 `;
 
 export default function Welcome({ setLoading }) {
+   
+  // Popular movies
+
   const [popular, setPopular] = useState([]);
   useEffect(() => {
     const fetchData = async () => {

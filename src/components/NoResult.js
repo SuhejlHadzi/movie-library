@@ -22,6 +22,9 @@ const Text = styled.h1`
 
 
 export default function NoResult() {
+
+  // Display this when no results found in search
+
   return (
     <Wrapper>
       <Text>No Results</Text>
