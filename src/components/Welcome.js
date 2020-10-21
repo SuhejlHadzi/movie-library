@@ -15,10 +15,6 @@ const Wrapper = styled.div`
     padding-top: 250px;
   }
 `;
-const ImageWrapper = styled.img`
-  width: 130px;
-  margin-top: 30px;
-`;
 
 const Title = styled.h1`
   font-size: 3.5em;

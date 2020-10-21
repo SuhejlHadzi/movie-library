@@ -48,20 +48,20 @@ export default function Cards({ movie }) {
   
   return (
     <Card>
-      <div className="poster">
+      <div>
         <CardImage
           src={`https://image.tmdb.org/t/p/w185_and_h278_bestv2/${movie.poster_path}`}
           alt={movie.title + " poster"}
         />
       </div>
-      <div className="card--content">
-        <Title className="card--title">{movie.title}</Title>
+      <div >
+        <Title >{movie.title}</Title>
         <Text>
           <small>Relase date: {movie.release_date}</small>
         </Text>
 
         <Text>
-          <small className="rating">Rating:  {movie.vote_average} <FaStar /> </small>
+          <small >Rating:  {movie.vote_average} <FaStar /> </small>
         </Text>
       </div>
     </Card>

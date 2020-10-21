@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
 import SearchMovies from "./SearchMovies";
-import { FaPlay, FaMoon, FaRegMoon } from "react-icons/fa";
-import { Link, useHistory } from "react-router-dom";
+import { FaPlay, FaMoon } from "react-icons/fa";
+import { useHistory } from "react-router-dom";
 
 const HeaderWrapper = styled.div`
   height: 170px;

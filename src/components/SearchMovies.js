@@ -112,7 +112,6 @@ export default function SearchMovies({ searchMovies, query, setQuery }) {
 
       <Form onSubmit={searchMovies}>
         <Input
-          className="input"
           type="text"
           name="query"
           placeholder="Search movies... "
