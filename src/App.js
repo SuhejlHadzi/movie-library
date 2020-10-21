@@ -63,7 +63,7 @@ function App() {
           <Route path="/search">
             <MovieResult movies={movies} />
           </Route>
-          <Route path="/" exact>
+          <Route path="/movie-library" exact>
             
             <Welcome setLoading={setLoading} />
           </Route>

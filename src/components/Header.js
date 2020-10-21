@@ -81,7 +81,7 @@ export default function Header({
   return (
     <HeaderWrapper>
       <UpperWrapper>
-        <Logo onClick={() => history.push("/")}>
+        <Logo onClick={() => history.push("/movie-library")}>
           <FaPlay /> <LogoText>MOVIE LIBRARY</LogoText>
         </Logo>
         <IconWrapper

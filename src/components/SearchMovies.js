@@ -96,7 +96,7 @@ export default function SearchMovies({ searchMovies, query, setQuery }) {
   return (
     <Wrapper>
       <ChipsWrapper>
-        <Link to="/" exact>
+        <Link to="/movie-library">
           <Chips name="Popular" />
         </Link>
         <Link to="/top-rated">
