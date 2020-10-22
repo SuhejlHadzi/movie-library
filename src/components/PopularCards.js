@@ -20,6 +20,10 @@ const Title = styled.h4`
   color: ${(props) => props.theme.color.primary};
   margin: 5px 0 5px 0;
   text-align: center;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 300px;
 `;
 
 const RatingText = styled.p`
