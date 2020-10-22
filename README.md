@@ -48,4 +48,4 @@ Please feel free to send pull request if you want to contribute!
 
 ## Authors
 
-- **SuhejlHadzi** - _Development_ - [Suhejl](https://github.com/SuhejlHadzi)
+- **SuhejlHadzi** - _Development_ - [SuhejlHadzi](https://github.com/SuhejlHadzi)
