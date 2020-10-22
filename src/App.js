@@ -5,7 +5,7 @@ import light from "./theme/light";
 import dark from "./theme/dark";
 import Header from "./components/Header";
 import MovieResult from "./components/MovieResult";
-import Welcome from "./components/Welcome";
+import Home from "./components/Home";
 import Loading from "./components/Loading";
 import {
   BrowserRouter as Router,
@@ -64,7 +64,7 @@ function App() {
             <MovieResult movies={movies} />
           </Route>
           <Route path="/movie-library">
-            <Welcome setLoading={setLoading} />
+            <Home setLoading={setLoading} />
           </Route>
           <Route path="/top-rated" exact>
             

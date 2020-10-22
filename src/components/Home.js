@@ -61,7 +61,7 @@ const IconStyle = styled.i`
   }
 `;
 
-export default function Welcome({ setLoading }) {
+export default function Home({ setLoading }) {
    
   // Popular movies
 
