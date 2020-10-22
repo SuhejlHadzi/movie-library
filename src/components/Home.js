@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaArrowDown } from "react-icons/fa";
-import PopCards from "./PopCards";
+import PopularCards from "./PopularCards";
 
 const Wrapper = styled.div`
   width: 100%;
@@ -92,7 +92,7 @@ export default function Home({ setLoading }) {
       <PopularWrapper>
         <CardWrapper>
           {popular.map((item) => (
-            <PopCards item={item} key={item.id} />
+            <PopularCards item={item} key={item.id} />
           ))}
         </CardWrapper>
       </PopularWrapper>

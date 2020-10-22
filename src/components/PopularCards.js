@@ -28,7 +28,7 @@ const RatingText = styled.p`
    margin: 0px 0 20px 0;
 `
 
-export default function PopCards({ item }) {
+export default function PopularCards({ item }) {
   return (
     <div>
       <PopCard
